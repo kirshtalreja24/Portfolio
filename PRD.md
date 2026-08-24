@@ -31,13 +31,13 @@ This PRD is written so either path works — just swap the asset source in Secti
 ## 3. Section-by-Section Breakdown
 
 ### 3.1 Navbar (sticky/fixed)
-- Logo: wordmark "SUSHMITA." — first letter styled red, rest white/black depending on scroll state (transparent-on-hero → dark bg on scroll)
+- Logo: wordmark "KIRSH." — first letter styled red, rest white/black depending on scroll state (transparent-on-hero → dark bg on scroll)
 - Nav links: About / Skills / Projects / Contact (smooth-scroll anchors)
 - Transitions from transparent-over-hero to solid dark background once scrolled
 
 ### 3.2 Hero Section
 - Micro-label: "YOUR FRIENDLY NEIGHBORHOOD ENGINEER"
-- Big italic headline: "SRI SUSHMITA." — bold condensed italic font, red drop-shadow/outline offset behind black text
+- Big italic headline: "KIRSH TALREJA." — bold condensed italic font, red drop-shadow/outline offset behind black text
 - Two CTAs: primary solid red "EXPLORE PROJECTS" (scrolls to Projects), secondary dark "↓ SDE_RESUME.PDF" (triggers file download)
 - Large hero visual: Spider-Man mask, full-bleed right side
 - **Interaction:** hovering the masked face cross-fades/reveals the real photo underneath (identity reveal)
@@ -264,3 +264,7 @@ export const projects = [
 - [ ] Resume downloads correctly
 - [ ] Lighthouse Performance/Accessibility ≥ 90
 - [ ] Deployed on Vercel with custom domain (optional) and OG meta tags
+
+
+
+<h1 class="text-gray-900 text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none opacity-0 italic uppercase" style="text-shadow: rgb(239, 68, 68) 4px 4px 0px, rgb(163, 21, 21) 7px 7px 0px; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">SRI<br>SUSHMITA.</h1>
