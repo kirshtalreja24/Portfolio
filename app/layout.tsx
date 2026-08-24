@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Anton, Inter } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 
-const headlineFont = Anton({
+const headlineFont = Poppins({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["700", "800"],
+  style: ["normal", "italic"],
   variable: "--font-headline",
   display: "swap",
 });

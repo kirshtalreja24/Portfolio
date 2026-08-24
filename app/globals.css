@@ -30,8 +30,8 @@
 @layer components {
   .headline-shadow {
     text-shadow:
-      4px 4px 0px theme("colors.primary.DEFAULT"),
-      7px 7px 0px theme("colors.primary.dark");
+      3px 3px 0px theme("colors.primary.DEFAULT"),
+      5px 5px 0px theme("colors.primary.dark");
   }
 
   .eyebrow {
@@ -39,7 +39,7 @@
   }
 
   .section-heading {
-    @apply font-headline italic uppercase text-4xl md:text-5xl lg:text-6xl leading-none tracking-tight text-ink headline-shadow;
+    @apply font-headline font-bold italic uppercase text-4xl md:text-5xl lg:text-6xl leading-none tracking-tight text-ink headline-shadow;
   }
 
   .web-watermark {

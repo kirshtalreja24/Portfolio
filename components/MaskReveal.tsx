@@ -3,9 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 
-// TODO(content): the "revealed" image below reuses the mask render as a stand-in
-// (desaturated, so the hover swap is visible). Once the real unmasked photo is
-// provided, drop it at public/assets/portrait.jpg and point the second <Image> at it.
 export default function MaskReveal() {
   const [revealed, setRevealed] = useState(false);
 
@@ -30,11 +27,11 @@ export default function MaskReveal() {
         }`}
       />
       <Image
-        src="/assets/spiderman-mask.png"
-        alt="Unmasked identity"
+        src="/assets/portrait.jpg"
+        alt="Kirsh Talreja, unmasked"
         fill
         sizes="(min-width: 768px) 50vw, 100vw"
-        className={`object-cover grayscale transition-opacity duration-500 ease-out motion-reduce:transition-none ${
+        className={`object-cover object-top transition-opacity duration-500 ease-out motion-reduce:transition-none ${
           revealed ? "opacity-100" : "opacity-0"
         }`}
       />

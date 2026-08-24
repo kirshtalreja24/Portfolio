@@ -26,7 +26,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="font-headline text-2xl italic uppercase tracking-tight">
+        <a href="#top" className="font-headline font-bold text-2xl italic uppercase tracking-tight">
           <span className="text-primary">K</span>
           <span className={scrolled ? "text-white" : "text-ink"}>IRSH.</span>
         </a>

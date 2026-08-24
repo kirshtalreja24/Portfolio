@@ -1,4 +1,4 @@
-import SpiderwebSVG from "./SpiderwebSVG";
+import WebCorner from "./WebCorner";
 import MaskReveal from "./MaskReveal";
 
 export default function Hero() {
@@ -9,13 +9,16 @@ export default function Hero() {
     >
       <MaskReveal />
 
-      <SpiderwebSVG className="pointer-events-none absolute -left-16 -top-16 z-10 h-56 w-56 opacity-70 md:h-72 md:w-72" />
-      <SpiderwebSVG className="pointer-events-none absolute -bottom-20 -right-16 z-10 h-56 w-56 opacity-70 md:h-72 md:w-72" />
+      <WebCorner className="pointer-events-none absolute -left-10 -top-10 z-10 h-48 w-48 opacity-60 md:h-64 md:w-64" />
+      <WebCorner
+        flip
+        className="pointer-events-none absolute -bottom-16 -right-10 z-10 h-48 w-48 opacity-60 md:h-64 md:w-64"
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div className="max-w-xl">
           <p className="eyebrow mb-4">Your friendly neighborhood engineer</p>
-          <h1 className="font-headline text-5xl italic uppercase leading-none tracking-tight text-ink headline-shadow md:text-7xl">
+          <h1 className="font-headline font-bold text-5xl italic uppercase leading-none tracking-tight text-ink headline-shadow md:text-7xl">
             Kirsh
             <br />
             Talreja.

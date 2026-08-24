@@ -4,8 +4,6 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useGsapScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 
-// TODO(content): swap this for a real full-body standing/hanging illustration —
-// the mask crop is a stand-in so the scroll-linked motion can be built and tested now.
 export default function HeroCharacter() {
   const figureRef = useRef<HTMLDivElement>(null);
 
@@ -38,15 +36,15 @@ export default function HeroCharacter() {
   return (
     <div
       ref={figureRef}
-      className="pointer-events-none absolute right-4 top-0 hidden h-28 w-28 overflow-hidden rounded-full border-4 border-primary/70 shadow-xl lg:block"
+      className="pointer-events-none absolute right-6 top-0 hidden h-52 w-32 lg:block"
       aria-hidden="true"
     >
       <Image
-        src="/assets/spiderman-mask.png"
+        src="/assets/spiderman-hanging.jpg"
         alt=""
         fill
-        sizes="112px"
-        className="object-cover"
+        sizes="128px"
+        className="object-contain object-top mix-blend-multiply"
       />
     </div>
   );
