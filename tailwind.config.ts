@@ -39,12 +39,17 @@ const config: Config = {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
         },
+        web_pulse: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.4)" },
+        },
       },
       animation: {
         "spin-slow": "spin_slow 40s linear infinite",
         "marquee-left": "marquee_left 28s linear infinite",
         "marquee-right": "marquee_right 24s linear infinite",
         sway: "sway 6s ease-in-out infinite",
+        "web-pulse": "web_pulse 8s ease-in-out infinite",
       },
     },
   },

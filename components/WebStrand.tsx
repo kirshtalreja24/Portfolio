@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { User } from "lucide-react";
+import Image from "next/image";
 import { useGsapScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 
-// TODO(content): swap the placeholder avatar circle for a real profile photo.
 export default function WebStrand() {
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
@@ -29,8 +28,8 @@ export default function WebStrand() {
         { scaleY: 1, duration: 0.6, ease: "power2.out", transformOrigin: "top" }
       ).fromTo(
         photoRef.current,
-        { y: -40, opacity: 0, scale: 0.8 },
-        { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: "elastic.out(1, 0.6)" },
+        { y: -180, opacity: 0, scale: 0.8 },
+        { y: 0, opacity: 1, scale: 1, duration: 1.1, ease: "elastic.out(1, 0.55)" },
         "-=0.1"
       );
     }, containerRef);
@@ -46,9 +45,15 @@ export default function WebStrand() {
       />
       <div
         ref={photoRef}
-        className="flex h-40 w-40 items-center justify-center rounded-full border-4 border-primary bg-surface-soft shadow-lg motion-reduce:opacity-100"
+        className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-primary shadow-lg motion-reduce:opacity-100 sm:h-64 sm:w-64"
       >
-        <User className="h-16 w-16 text-primary" strokeWidth={1.5} />
+        <Image
+          src="/assets/portrait.jpg"
+          alt="Kirsh Talreja"
+          fill
+          sizes="256px"
+          className="object-cover object-top"
+        />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import WebCorner from "./WebCorner";
-import MaskReveal from "./MaskReveal";
+import HeroVisual from "./HeroVisual";
 
 export default function Hero() {
   return (
@@ -7,13 +7,13 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-screen items-center overflow-hidden bg-surface pt-24"
     >
-      <MaskReveal />
+      <HeroVisual />
 
       <WebCorner className="pointer-events-none absolute -left-10 -top-10 z-10 h-48 w-48 opacity-60 md:h-64 md:w-64" />
-      <WebCorner
+      {/* <WebCorner
         flip
-        className="pointer-events-none absolute -bottom-16 -right-10 z-10 h-48 w-48 opacity-60 md:h-64 md:w-64"
-      />
+        className="pointer-events-none absolute bottom-0 right-0 z-10 h-64 w-48 origin-bottom-right opacity-60 md:h-64 md:w-64"
+      /> */}
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div className="max-w-xl">

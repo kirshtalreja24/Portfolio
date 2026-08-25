@@ -7,16 +7,12 @@ interface WebCornerProps {
 
 export default function WebCorner({ className = "", flip = false }: WebCornerProps) {
   return (
-    <div
-      className={`${className} animate-spin-slow`}
-      style={{ animationDuration: "90s" }}
-      aria-hidden="true"
-    >
+    <div className={`${className} animate-web-pulse`} aria-hidden="true">
       <Image
         src="/assets/web.png"
-        alt=""
-        width={420}
-        height={594}
+        alt=""  
+        width={320}
+        height={320}
         className={`h-full w-full object-contain ${flip ? "rotate-180" : ""}`}
       />
     </div>
