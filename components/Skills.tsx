@@ -48,6 +48,7 @@ export default function Skills() {
 
       <SpiderDangle variant="sway" size="lg" />
       <Sticker src={STICKERS.exclaim} className="bottom-12 left-10" size={64} rotate={10} />
+      <Sticker src={STICKERS.headphones} className="left-8 top-8" size={60} rotate={-10} />
     </section>
   );
 }

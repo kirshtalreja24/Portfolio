@@ -28,6 +28,7 @@ export default function Projects() {
   return (
     <section id="projects" className="relative bg-surface-soft py-32">
       <Sticker src={STICKERS.star} className="left-10 top-32 lg:left-16" size={72} rotate={15} />
+      <Sticker src={STICKERS.exclaim} className="bottom-20 left-10 lg:left-16" size={56} rotate={-8} />
 
       <div className="mx-auto max-w-6xl px-6 lg:pl-40">
         <div ref={headerRef}>

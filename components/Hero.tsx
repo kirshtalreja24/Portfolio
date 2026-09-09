@@ -43,6 +43,7 @@ export default function Hero() {
       />
 
       <Sticker src={STICKERS.star} className="left-8 bottom-16" size={64} rotate={-12} />
+      <Sticker src={STICKERS.camera} className="left-40 bottom-8" size={56} rotate={9} />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div ref={introRef} className="max-w-xl">
