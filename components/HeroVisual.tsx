@@ -13,7 +13,7 @@ export default function HeroVisual() {
       />
 
       {/* keeps hero copy legible over the full-bleed image on mobile, where this panel spans the whole section */}
-      <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/10 to-transparent md:bg-gradient-to-r md:from-surface md:via-transparent md:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent md:bg-gradient-to-r md:from-surface md:via-transparent md:to-transparent" />
     </div>
   );
 }

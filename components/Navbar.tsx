@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -11,6 +12,7 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 64);
@@ -19,16 +21,23 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const closeMenu = () => setMenuOpen(false);
+  const dark = scrolled || menuOpen;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-ink/95 backdrop-blur shadow-md" : "bg-transparent"
+        dark ? "bg-ink/95 backdrop-blur shadow-md" : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="font-headline font-bold text-2xl italic uppercase tracking-tight">
+        <a
+          href="#top"
+          onClick={closeMenu}
+          className="font-headline font-bold text-2xl italic uppercase tracking-tight"
+        >
           <span className="text-primary">K</span>
-          <span className={scrolled ? "text-white" : "text-ink"}>IRSH.</span>
+          <span className={dark ? "text-white" : "text-ink"}>IRSH.</span>
         </a>
 
         <ul className="hidden gap-8 md:flex">
@@ -45,7 +54,33 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
+        <button
+          type="button"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+          className={`-mr-2 p-2 md:hidden ${dark ? "text-white" : "text-ink"}`}
+        >
+          {menuOpen ? <X className="h-6 w-6" strokeWidth={2} /> : <Menu className="h-6 w-6" strokeWidth={2} />}
+        </button>
       </nav>
+
+      {menuOpen && (
+        <ul className="flex flex-col gap-1 border-t border-white/10 px-6 pb-6 pt-2 md:hidden">
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                onClick={closeMenu}
+                className="block py-2.5 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:text-primary"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </header>
   );
 }
