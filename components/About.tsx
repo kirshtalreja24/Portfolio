@@ -1,4 +1,4 @@
-import WebCorner from "./WebCorner";
+import WebCorner, { WEB_CORNER_SIZE } from "./WebCorner";
 import WebStrand from "./WebStrand";
 
 const STACK = ["React", "Node.js", "Express", "PostgreSQL", "MongoDB", "Docker"];
@@ -8,8 +8,10 @@ export default function About() {
     <section id="about" className="web-watermark relative bg-surface-soft py-32">
       <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
         <div>
-           <WebCorner className="pointer-events-none absolute -left-10 -top-30 z-10 h-48 w-48 opacity-60 md:h-64 md:w-64" />
-               
+          <WebCorner
+            className={`pointer-events-none absolute -left-10 -top-10 z-10 opacity-60 ${WEB_CORNER_SIZE}`}
+          />
+
           <p className="eyebrow mb-4">🕸 Behind the Mask</p>
           <h2 className="section-heading">
             KIRSH 

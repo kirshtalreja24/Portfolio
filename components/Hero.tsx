@@ -1,4 +1,4 @@
-import WebCorner from "./WebCorner";
+import WebCorner, { WEB_CORNER_SIZE } from "./WebCorner";
 import HeroVisual from "./HeroVisual";
 
 export default function Hero() {
@@ -9,11 +9,9 @@ export default function Hero() {
     >
       <HeroVisual />
 
-      <WebCorner className="pointer-events-none absolute -left-10 -top-10 z-10 h-48 w-48 opacity-60 md:h-64 md:w-64" />
-      {/* <WebCorner
-        flip
-        className="pointer-events-none absolute bottom-0 right-0 z-10 h-64 w-48 origin-bottom-right opacity-60 md:h-64 md:w-64"
-      /> */}
+      <WebCorner
+        className={`pointer-events-none absolute -left-10 -top-10 z-10 opacity-60 ${WEB_CORNER_SIZE}`}
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div className="max-w-xl">

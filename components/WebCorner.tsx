@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+/** Shared default size — keep every WebCorner call site in sync rather than each inventing its own. */
+export const WEB_CORNER_SIZE = "h-48 w-48 md:h-64 md:w-64";
+
 interface WebCornerProps {
   className?: string;
   flip?: boolean;
