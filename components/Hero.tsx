@@ -11,6 +11,7 @@ export default function Hero() {
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
   const line1Ref = useRef<HTMLSpanElement>(null);
   const line2Ref = useRef<HTMLSpanElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
 
   useIntroReveal(introRef, (tl) => {
     tl.from(eyebrowRef.current, {
@@ -18,17 +19,23 @@ export default function Hero() {
       opacity: 0,
       duration: 0.5,
       ease: "power3.out",
-    }).from(
-      [line1Ref.current, line2Ref.current],
-      {
-        y: 40,
-        opacity: 0,
-        duration: 0.7,
-        ease: "power3.out",
-        stagger: 0.12,
-      },
-      "-=0.2"
-    );
+    })
+      .from(
+        [line1Ref.current, line2Ref.current],
+        {
+          y: 40,
+          opacity: 0,
+          duration: 0.7,
+          ease: "power3.out",
+          stagger: 0.12,
+        },
+        "-=0.2"
+      )
+      .from(
+        ctaRef.current,
+        { y: 20, opacity: 0, duration: 0.5, ease: "power3.out" },
+        "-=0.25"
+      );
   });
 
   return (
@@ -59,7 +66,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div ref={ctaRef} className="mt-10 flex flex-wrap gap-4 motion-reduce:opacity-100">
             <a
               href="#projects"
               className="rounded-lg bg-primary px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-transform hover:-translate-y-0.5 hover:bg-primary-dark"
