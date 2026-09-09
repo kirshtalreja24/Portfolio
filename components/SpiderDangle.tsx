@@ -57,10 +57,10 @@ function ScrollDangle({ size }: { size: Size }) {
 function SwayDangle({ size }: { size: Size }) {
   return (
     <div
-      className="pointer-events-none absolute right-8 top-16 hidden origin-top animate-sway lg:block"
+      className="pointer-events-none absolute right-8 top-16 hidden origin-top animate-sway lg:flex lg:flex-col lg:items-center"
       aria-hidden="true"
     >
-      <div className="mx-auto h-16 w-0.5 bg-primary/50" />
+      <div className="h-16 w-0.5 bg-primary/50" />
       <div className={`relative ${SIZE_CLASSES[size]}`}>
         <DangleImage size={size} />
       </div>
