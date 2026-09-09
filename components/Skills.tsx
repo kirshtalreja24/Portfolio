@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { skills } from "@/data/skills";
 import SkillCard from "./SkillCard";
+import SpiderDangle from "./SpiderDangle";
 
 export default function Skills() {
   return (
@@ -16,18 +16,7 @@ export default function Skills() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute right-8 top-16 hidden origin-top animate-sway lg:block">
-        <div className="mx-auto h-16 w-0.5 bg-primary/50" />
-        <div className="relative h-72 w-40">
-          <Image
-            src="/assets/spiderman-hanging.jpg"
-            alt=""
-            fill
-            sizes="160px"
-            className="object-contain object-top mix-blend-multiply"
-          />
-        </div>
-      </div>
+      <SpiderDangle variant="sway" size="lg" />
     </section>
   );
 }
