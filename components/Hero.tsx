@@ -6,18 +6,28 @@ import HeroVisual from "./HeroVisual";
 import { useIntroReveal } from "@/lib/gsap";
 
 export default function Hero() {
-  const headingRef = useRef<HTMLHeadingElement>(null);
+  const introRef = useRef<HTMLDivElement>(null);
+  const eyebrowRef = useRef<HTMLParagraphElement>(null);
   const line1Ref = useRef<HTMLSpanElement>(null);
   const line2Ref = useRef<HTMLSpanElement>(null);
 
-  useIntroReveal(headingRef, (tl) => {
-    tl.from([line1Ref.current, line2Ref.current], {
-      y: 40,
+  useIntroReveal(introRef, (tl) => {
+    tl.from(eyebrowRef.current, {
+      y: 20,
       opacity: 0,
-      duration: 0.7,
+      duration: 0.5,
       ease: "power3.out",
-      stagger: 0.12,
-    });
+    }).from(
+      [line1Ref.current, line2Ref.current],
+      {
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power3.out",
+        stagger: 0.12,
+      },
+      "-=0.2"
+    );
   });
 
   return (
@@ -32,12 +42,11 @@ export default function Hero() {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
-        <div className="max-w-xl">
-          <p className="eyebrow mb-4">Your friendly neighborhood engineer</p>
-          <h1
-            ref={headingRef}
-            className="font-headline font-bold text-5xl italic uppercase leading-none tracking-tight text-ink headline-shadow md:text-7xl"
-          >
+        <div ref={introRef} className="max-w-xl">
+          <p ref={eyebrowRef} className="eyebrow mb-4 motion-reduce:opacity-100">
+            Your friendly neighborhood engineer
+          </p>
+          <h1 className="font-headline font-bold text-5xl italic uppercase leading-none tracking-tight text-ink headline-shadow md:text-7xl">
             <span ref={line1Ref} className="block motion-reduce:opacity-100">
               Kirsh
             </span>
