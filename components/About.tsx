@@ -8,6 +8,8 @@ import { useScrollTimeline } from "@/lib/gsap";
 
 const featuredSkills = skills.filter((skill) => skill.featured).map((skill) => skill.name);
 
+const SECONDARY_ARSENAL = ["Photoshop", "Illustrator", "CapCut", "DaVinci Resolve", "Canva"];
+
 const BIO_PARAGRAPHS = [
   "Final-year Computer Science student at FAST-NUCES Karachi, building AI-powered products and full-stack web experiences — from stroke-level diffusion models to production React and Node apps. Currently splitting time across software engineering and AI research internships, with a growing focus on generative AI and adaptive learning systems.",
   "Outside the codebase, I've taken on Media Manager, Web Developer, and Marketing Lead roles across university societies — mixing technical builds with content and design work along the way.",
@@ -66,6 +68,22 @@ export default function About() {
                   className="cursor-default rounded-full border border-ink/10 bg-surface px-4 py-1.5 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-md"
                 >
                   {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-ink/60">
+              Secondary Arsenal
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {SECONDARY_ARSENAL.map((tool) => (
+                <span
+                  key={tool}
+                  className="cursor-default rounded-full border border-ink/10 bg-surface px-4 py-1.5 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-md"
+                >
+                  {tool}
                 </span>
               ))}
             </div>
