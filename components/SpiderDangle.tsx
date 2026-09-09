@@ -19,7 +19,7 @@ const IMAGE_SIZES: Record<Size, string> = {
 function DangleImage({ size }: { size: Size }) {
   return (
     <Image
-      src="/assets/spiderman-hanging.jpg"
+      src="/assets/spiderman-hanging.png"
       alt=""
       fill
       sizes={IMAGE_SIZES[size]}
