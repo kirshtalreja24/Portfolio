@@ -1,7 +1,8 @@
 import WebCorner, { WEB_CORNER_SIZE } from "./WebCorner";
 import WebStrand from "./WebStrand";
+import { skills } from "@/data/skills";
 
-const STACK = ["React", "Node.js", "Express", "PostgreSQL", "MongoDB", "Docker"];
+const featuredSkills = skills.filter((skill) => skill.featured).map((skill) => skill.name);
 
 export default function About() {
   return (
@@ -26,7 +27,7 @@ export default function About() {
               Primary Tech Stack
             </p>
             <div className="flex flex-wrap gap-2">
-              {STACK.map((tech) => (
+              {featuredSkills.map((tech) => (
                 <span
                   key={tech}
                   className="rounded-full border border-ink/10 bg-surface px-4 py-1.5 text-sm font-semibold text-ink"
