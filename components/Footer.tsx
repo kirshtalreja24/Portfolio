@@ -1,8 +1,13 @@
-import { Github, Mail, ArrowUp } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, ArrowUp } from "lucide-react";
 
-// TODO(content): add LinkedIn back in once the real profile URL is available.
 const SOCIALS = [
   { icon: Github, href: "https://github.com/kirshtalreja24", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/kirsh-talreja-194a77293/",
+    label: "LinkedIn",
+  },
+  { icon: Instagram, href: "https://www.instagram.com/unplanned.pixels/", label: "Instagram" },
   { icon: Mail, href: "mailto:kirshtalreja409@gmail.com", label: "Email" },
 ];
 

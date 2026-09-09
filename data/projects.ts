@@ -5,8 +5,6 @@ export interface Project {
   link: string;
 }
 
-// TODO(content): link each project to its own repo/demo once those URLs are available —
-// currently pointing at the GitHub profile as a placeholder.
 export const projects: Project[] = [
   {
     title: "InkMimic",
@@ -20,14 +18,14 @@ export const projects: Project[] = [
     description:
       "Conditional-GAN recommender trained on the MovieLens 100K dataset, modeling user–item interactions through adversarial learning with cold-start support via interactive user ratings.",
     stack: ["Python", "PyTorch", "Streamlit"],
-    link: "https://github.com/kirshtalreja24",
+    link: "https://github.com/kirshtalreja24/cgan-based-movie-recommender-system",
   },
   {
     title: "WanderLust",
     description:
       "Full-stack MEN-stack travel app with role-based CRUD listings, Cloudinary image uploads, Mapbox location mapping, and Passport.js authentication.",
     stack: ["Node.js", "Express", "MongoDB", "Passport.js"],
-    link: "https://github.com/kirshtalreja24",
+    link: "https://github.com/kirshtalreja24/WANDERLUST",
   },
   {
     title: "This Portfolio",
