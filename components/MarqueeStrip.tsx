@@ -1,10 +1,12 @@
 const KEYWORDS = [
-  "FRONTEND DEVELOPMENT",
-  "UI/UX DESIGN",
-  "GSAP ANIMATIONS",
+  "AI & MACHINE LEARNING",
   "FULL STACK ENGINEER",
-  "REACT & NEXT.JS",
-  "API DESIGN",
+  "PYTORCH & TENSORFLOW",
+  "REACT & NODE.JS",
+  "GENERATIVE AI",
+  "COMPUTER VISION",
+  "PYTHON & FASTAPI",
+  "GSAP ANIMATIONS",
 ];
 
 function Track({ reverse = false }: { reverse?: boolean }) {
