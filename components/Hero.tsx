@@ -1,7 +1,25 @@
+"use client";
+
+import { useRef } from "react";
 import WebCorner, { WEB_CORNER_SIZE } from "./WebCorner";
 import HeroVisual from "./HeroVisual";
+import { useIntroReveal } from "@/lib/gsap";
 
 export default function Hero() {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const line1Ref = useRef<HTMLSpanElement>(null);
+  const line2Ref = useRef<HTMLSpanElement>(null);
+
+  useIntroReveal(headingRef, (tl) => {
+    tl.from([line1Ref.current, line2Ref.current], {
+      y: 40,
+      opacity: 0,
+      duration: 0.7,
+      ease: "power3.out",
+      stagger: 0.12,
+    });
+  });
+
   return (
     <section
       id="top"
@@ -16,10 +34,16 @@ export default function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div className="max-w-xl">
           <p className="eyebrow mb-4">Your friendly neighborhood engineer</p>
-          <h1 className="font-headline font-bold text-5xl italic uppercase leading-none tracking-tight text-ink headline-shadow md:text-7xl">
-            Kirsh
-            <br />
-            Talreja.
+          <h1
+            ref={headingRef}
+            className="font-headline font-bold text-5xl italic uppercase leading-none tracking-tight text-ink headline-shadow md:text-7xl"
+          >
+            <span ref={line1Ref} className="block motion-reduce:opacity-100">
+              Kirsh
+            </span>
+            <span ref={line2Ref} className="block motion-reduce:opacity-100">
+              Talreja.
+            </span>
           </h1>
 
           <div className="mt-10 flex flex-wrap gap-4">

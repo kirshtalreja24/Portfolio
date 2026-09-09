@@ -132,4 +132,23 @@ export function useScrollTimeline<T extends Element>(
   );
 }
 
+/**
+ * A plain timeline that plays once on mount — no ScrollTrigger, for content that's
+ * already in view at load (e.g. the hero heading). Shares the same context/cleanup/
+ * reduced-motion lifecycle as the scroll-driven hooks.
+ */
+export function useIntroReveal<T extends Element>(
+  ref: RefObject<T | null>,
+  buildTimeline: (timeline: gsap.core.Timeline) => void
+) {
+  useGsapEffect(
+    ref,
+    () => {
+      const tl = gsap.timeline();
+      buildTimeline(tl);
+    },
+    []
+  );
+}
+
 export { gsap, ScrollTrigger };

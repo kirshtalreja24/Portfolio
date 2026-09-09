@@ -30,7 +30,7 @@ export default function About() {
               {featuredSkills.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-ink/10 bg-surface px-4 py-1.5 text-sm font-semibold text-ink"
+                  className="cursor-default rounded-full border border-ink/10 bg-surface px-4 py-1.5 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-md"
                 >
                   {tech}
                 </span>
