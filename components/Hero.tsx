@@ -65,10 +65,9 @@ export default function Hero() {
             >
               Explore Projects
             </a>
-            {/* TODO(content): point at the real resume file once it's added to public/assets/resume.pdf */}
             <a
               href="/assets/resume.pdf"
-              download
+              download="Kirsh_Talreja_Resume.pdf"
               className="rounded-lg bg-ink px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-transform hover:-translate-y-0.5 hover:bg-ink/80"
             >
               ↓ SDE_Resume.pdf
