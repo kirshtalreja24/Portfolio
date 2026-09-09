@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { skills } from "@/data/skills";
 import SkillCard from "./SkillCard";
 import SpiderDangle from "./SpiderDangle";
+import Sticker, { STICKERS } from "./Sticker";
 import { useScrollTimeline } from "@/lib/gsap";
 
 export default function Skills() {
@@ -46,6 +47,7 @@ export default function Skills() {
       </div>
 
       <SpiderDangle variant="sway" size="lg" />
+      <Sticker src={STICKERS.exclaim} className="bottom-12 left-10" size={64} rotate={10} />
     </section>
   );
 }

@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { projects } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
+import Sticker, { STICKERS } from "./Sticker";
 import { useScrollTimeline } from "@/lib/gsap";
 
 export default function Projects() {
@@ -26,6 +27,8 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative bg-surface-soft py-32">
+      <Sticker src={STICKERS.star} className="left-10 top-32 lg:left-16" size={72} rotate={15} />
+
       <div className="mx-auto max-w-6xl px-6 lg:pl-40">
         <div ref={headerRef}>
           <p ref={eyebrowRef} className="eyebrow mb-4 motion-reduce:opacity-100">

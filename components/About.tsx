@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import WebCorner, { WEB_CORNER_SIZE } from "./WebCorner";
 import WebStrand from "./WebStrand";
+import Sticker, { STICKERS } from "./Sticker";
 import { skills } from "@/data/skills";
 import { useScrollTimeline } from "@/lib/gsap";
 
@@ -36,6 +37,9 @@ export default function About() {
 
   return (
     <section id="about" className="web-watermark relative bg-surface-soft py-32">
+      <Sticker src={STICKERS.headphones} className="right-10 top-10" size={72} rotate={8} />
+      <Sticker src={STICKERS.camera} className="bottom-10 right-16" size={80} rotate={-6} />
+
       <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2">
         <div ref={introRef}>
           <WebCorner

@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import WebCorner, { WEB_CORNER_SIZE } from "./WebCorner";
 import HeroVisual from "./HeroVisual";
+import Sticker, { STICKERS } from "./Sticker";
 import { useIntroReveal } from "@/lib/gsap";
 
 export default function Hero() {
@@ -40,6 +41,8 @@ export default function Hero() {
       <WebCorner
         className={`pointer-events-none absolute -left-10 -top-10 z-10 opacity-60 ${WEB_CORNER_SIZE}`}
       />
+
+      <Sticker src={STICKERS.star} className="left-8 bottom-16" size={64} rotate={-12} />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6">
         <div ref={introRef} className="max-w-xl">

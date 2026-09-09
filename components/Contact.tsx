@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import ContactForm from "./ContactForm";
+import Sticker, { STICKERS } from "./Sticker";
 import { useScrollTimeline } from "@/lib/gsap";
 
 export default function Contact() {
@@ -29,7 +30,10 @@ export default function Contact() {
   );
 
   return (
-    <section id="contact" className="bg-surface py-32">
+    <section id="contact" className="relative bg-surface py-32">
+      <Sticker src={STICKERS.headphones} className="left-10 top-1/2 xl:left-24" size={76} rotate={-8} />
+      <Sticker src={STICKERS.exclaim} className="right-10 top-1/3 xl:right-24" size={56} rotate={12} />
+
       <div ref={introRef} className="mx-auto max-w-2xl px-6">
         <p ref={eyebrowRef} className="eyebrow mb-4 text-center motion-reduce:opacity-100">
           Get in Touch
