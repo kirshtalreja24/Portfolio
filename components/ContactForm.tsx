@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { submitContact } from "@/lib/contact-client";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -15,24 +16,14 @@ export default function ContactForm() {
 
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+    const result = await submitContact(data);
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body.error ?? "Something went wrong. Try again.");
-      }
-
+    if (result.ok) {
       setStatus("success");
       form.reset();
-    } catch (err) {
+    } else {
       setStatus("error");
-      setErrorMessage(err instanceof Error ? err.message : "Something went wrong.");
+      setErrorMessage(result.error);
     }
   }
 
