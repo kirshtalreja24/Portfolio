@@ -22,16 +22,23 @@ export default function WebStrand() {
         { y: 0, opacity: 1, scale: 1, duration: duration.photoPop, ease: ease.photoPop },
         "-=0.1"
       )
-      .call(() => {
-        // Swing the string and the circle together as one rigid pendulum, pivoting
-        // from the top so the whole assembly reads as hanging from the attach point.
-        pendulumRef.current?.classList.add("origin-top", "animate-sway");
+      // Swing the string and circle together as one rigid pendulum, pivoting from the
+      // top. Driven by GSAP the whole way through (rather than handing off to a CSS
+      // keyframe) so it eases out of rest into the swing instead of snapping to the
+      // keyframe's starting angle.
+      .to(pendulumRef.current, { rotate: -3, duration: 0.8, ease: "sine.inOut" })
+      .to(pendulumRef.current, {
+        rotate: 3,
+        duration: 3,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
       });
   });
 
   return (
     <div ref={containerRef} className="flex flex-col items-center">
-      <div ref={pendulumRef} className="flex flex-col items-center">
+      <div ref={pendulumRef} className="flex flex-col items-center origin-top">
         <div
           ref={lineRef}
           className="h-40 w-0.5 origin-top bg-primary motion-reduce:scale-y-100"
