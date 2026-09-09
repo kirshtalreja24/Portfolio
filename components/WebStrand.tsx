@@ -1,41 +1,26 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
-import { useGsapScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
+import { useScrollTimeline } from "@/lib/gsap";
 
 export default function WebStrand() {
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const { gsap, ScrollTrigger } = useGsapScrollTrigger();
-    if (prefersReducedMotion() || !containerRef.current) return;
-
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 75%",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      tl.fromTo(
-        lineRef.current,
-        { scaleY: 0 },
-        { scaleY: 1, duration: 0.6, ease: "power2.out", transformOrigin: "top" }
-      ).fromTo(
-        photoRef.current,
-        { y: -180, opacity: 0, scale: 0.8 },
-        { y: 0, opacity: 1, scale: 1, duration: 1.1, ease: "elastic.out(1, 0.55)" },
-        "-=0.1"
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
+  useScrollTimeline(containerRef, (tl, { duration, ease }) => {
+    tl.fromTo(
+      lineRef.current,
+      { scaleY: 0 },
+      { scaleY: 1, duration: duration.lineDraw, ease: ease.lineDraw, transformOrigin: "top" }
+    ).fromTo(
+      photoRef.current,
+      { y: -180, opacity: 0, scale: 0.8 },
+      { y: 0, opacity: 1, scale: 1, duration: duration.photoPop, ease: ease.photoPop },
+      "-=0.1"
+    );
+  });
 
   return (
     <div ref={containerRef} className="flex flex-col items-center">

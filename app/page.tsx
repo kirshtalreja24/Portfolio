@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import HeroCharacter from "@/components/HeroCharacter";
+import { TRACK_ID } from "@/lib/gsap";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <Hero />
       <MarqueeStrip />
 
-      <div id="character-track" className="relative">
+      <div id={TRACK_ID} className="relative">
         <HeroCharacter />
         <About />
         <Skills />
