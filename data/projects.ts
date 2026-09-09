@@ -5,34 +5,35 @@ export interface Project {
   link: string;
 }
 
-// TODO(content): swap in real project descriptions + links before launch.
+// TODO(content): link each project to its own repo/demo once those URLs are available —
+// currently pointing at the GitHub profile as a placeholder.
 export const projects: Project[] = [
   {
-    title: "Multi-Tenant SaaS Platform",
+    title: "InkMimic",
     description:
-      "Containerized multi-tenant SaaS app with strict data isolation, dynamic tenancy resolution, and role-based access control.",
-    stack: ["React", "Node.js", "PostgreSQL", "Docker"],
+      "AI-powered handwriting generation platform that replicates individual handwriting styles with a stroke-level diffusion model — typed-to-handwriting generation, style analysis, and web + mobile apps on a FastAPI backend.",
+    stack: ["Python", "PyTorch", "FastAPI", "React", "React Native", "Supabase"],
     link: "https://github.com/kirshtalreja24",
   },
   {
-    title: "Realtime Collaboration Tool",
+    title: "CGAN Movie Recommender",
     description:
-      "Live-cursor collaborative editor with conflict-free sync, presence indicators, and optimistic UI updates.",
-    stack: ["Next.js", "TypeScript", "WebSockets"],
+      "Conditional-GAN recommender trained on the MovieLens 100K dataset, modeling user–item interactions through adversarial learning with cold-start support via interactive user ratings.",
+    stack: ["Python", "PyTorch", "Streamlit"],
     link: "https://github.com/kirshtalreja24",
   },
   {
-    title: "E-Commerce Admin Dashboard",
+    title: "WanderLust",
     description:
-      "Order management dashboard with real-time inventory sync, analytics charts, and role-scoped permissions.",
-    stack: ["React", "Express", "MongoDB"],
+      "Full-stack MEN-stack travel app with role-based CRUD listings, Cloudinary image uploads, Mapbox location mapping, and Passport.js authentication.",
+    stack: ["Node.js", "Express", "MongoDB", "Passport.js"],
     link: "https://github.com/kirshtalreja24",
   },
   {
-    title: "Developer Portfolio Engine",
+    title: "This Portfolio",
     description:
-      "This very site — a GSAP-driven scroll narrative built on Next.js with a fully typed content layer.",
-    stack: ["Next.js", "Tailwind CSS", "GSAP"],
-    link: "https://github.com/kirshtalreja24",
+      "This very site — a Spider-Man-themed, GSAP-driven scroll narrative built on Next.js with a fully typed content layer.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
+    link: "https://github.com/kirshtalreja24/Portfolio",
   },
 ];

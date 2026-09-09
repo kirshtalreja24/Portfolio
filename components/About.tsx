@@ -8,9 +8,8 @@ import { useScrollTimeline } from "@/lib/gsap";
 
 const featuredSkills = skills.filter((skill) => skill.featured).map((skill) => skill.name);
 
-// TODO(content): replace with real bio copy once resume details are provided.
 const BIO =
-  "A full-stack engineer who enjoys turning complex problems into simple, elegant interfaces — currently building web experiences that are fast, accessible, and a little fun to use.";
+  "Final-year Computer Science student at FAST-NUCES Karachi, building AI-powered products and full-stack web experiences — from stroke-level diffusion models to production React and Node apps. Currently splitting time across software engineering and AI research internships, with a growing focus on generative AI and adaptive learning systems.";
 
 export default function About() {
   const introRef = useRef<HTMLDivElement>(null);

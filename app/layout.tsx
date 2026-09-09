@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://kirshtalreja.dev"),
   title: "Kirsh Talreja — Your Friendly Neighborhood Engineer",
   description:
-    "Full-stack developer portfolio — React, Node.js, and a Spider-Man-themed web-slinging scroll narrative.",
+    "Full-stack & AI engineer portfolio — React, Node.js, PyTorch, and a Spider-Man-themed web-slinging scroll narrative.",
   openGraph: {
     title: "Kirsh Talreja — Your Friendly Neighborhood Engineer",
     description:
-      "Full-stack developer portfolio — React, Node.js, and a Spider-Man-themed web-slinging scroll narrative.",
+      "Full-stack & AI engineer portfolio — React, Node.js, PyTorch, and a Spider-Man-themed web-slinging scroll narrative.",
     type: "website",
   },
 };

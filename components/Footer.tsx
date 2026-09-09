@@ -1,10 +1,9 @@
-import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { Github, Mail, ArrowUp } from "lucide-react";
 
-// TODO(content): point these at your real GitHub/LinkedIn/email.
+// TODO(content): add LinkedIn back in once the real profile URL is available.
 const SOCIALS = [
   { icon: Github, href: "https://github.com/kirshtalreja24", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/kirshtalreja", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:khansalaar23@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:kirshtalreja409@gmail.com", label: "Email" },
 ];
 
 export default function Footer() {

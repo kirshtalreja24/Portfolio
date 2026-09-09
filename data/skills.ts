@@ -2,23 +2,32 @@ export type SkillLevel = "Advanced" | "Proficient";
 
 export interface Skill {
   name: string;
-  category: "Frontend" | "Backend" | "Tools" | "Languages";
+  category: "Languages" | "AI & ML" | "Web & Mobile" | "Backend & Data" | "Tools";
   level: SkillLevel;
   /** Shown in the About section's "Primary Tech Stack" summary. */
   featured?: boolean;
 }
 
 export const skills: Skill[] = [
-  { name: "React", category: "Frontend", level: "Advanced", featured: true },
-  { name: "Next.js", category: "Frontend", level: "Advanced" },
-  { name: "Tailwind CSS", category: "Frontend", level: "Advanced" },
-  { name: "GSAP", category: "Frontend", level: "Proficient" },
-  { name: "Node.js", category: "Backend", level: "Advanced", featured: true },
-  { name: "Express", category: "Backend", level: "Proficient", featured: true },
-  { name: "PostgreSQL", category: "Backend", level: "Proficient", featured: true },
-  { name: "MongoDB", category: "Backend", level: "Proficient", featured: true },
-  { name: "TypeScript", category: "Languages", level: "Advanced" },
+  { name: "Python", category: "Languages", level: "Advanced", featured: true },
+  { name: "C++", category: "Languages", level: "Proficient" },
   { name: "JavaScript", category: "Languages", level: "Advanced" },
-  { name: "Docker", category: "Tools", level: "Proficient", featured: true },
+
+  { name: "PyTorch", category: "AI & ML", level: "Advanced", featured: true },
+  { name: "TensorFlow", category: "AI & ML", level: "Advanced" },
+  { name: "Computer Vision", category: "AI & ML", level: "Proficient" },
+  { name: "NLP", category: "AI & ML", level: "Proficient" },
+
+  { name: "React", category: "Web & Mobile", level: "Advanced", featured: true },
+  { name: "React Native", category: "Web & Mobile", level: "Proficient" },
+  { name: "Next.js", category: "Web & Mobile", level: "Advanced" },
+  { name: "Node.js", category: "Web & Mobile", level: "Advanced", featured: true },
+  { name: "FastAPI", category: "Web & Mobile", level: "Proficient", featured: true },
+  { name: "Tailwind CSS", category: "Web & Mobile", level: "Advanced" },
+
+  { name: "PostgreSQL", category: "Backend & Data", level: "Proficient", featured: true },
+  { name: "MongoDB", category: "Backend & Data", level: "Proficient" },
+  { name: "Supabase", category: "Backend & Data", level: "Proficient" },
+
   { name: "Git & GitHub", category: "Tools", level: "Advanced" },
 ];
