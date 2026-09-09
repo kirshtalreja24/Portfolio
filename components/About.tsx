@@ -8,8 +8,10 @@ import { useScrollTimeline } from "@/lib/gsap";
 
 const featuredSkills = skills.filter((skill) => skill.featured).map((skill) => skill.name);
 
-const BIO =
-  "Final-year Computer Science student at FAST-NUCES Karachi, building AI-powered products and full-stack web experiences — from stroke-level diffusion models to production React and Node apps. Currently splitting time across software engineering and AI research internships, with a growing focus on generative AI and adaptive learning systems.";
+const BIO_PARAGRAPHS = [
+  "Final-year Computer Science student at FAST-NUCES Karachi, building AI-powered products and full-stack web experiences — from stroke-level diffusion models to production React and Node apps. Currently splitting time across software engineering and AI research internships, with a growing focus on generative AI and adaptive learning systems.",
+  "Outside the codebase, I've taken on Media Manager, Web Developer, and Marketing Lead roles across university societies — mixing technical builds with content and design work along the way.",
+];
 
 export default function About() {
   const introRef = useRef<HTMLDivElement>(null);
@@ -47,7 +49,11 @@ export default function About() {
             TALREJA.
           </h2>
 
-          <p className="mt-6 max-w-md text-sm leading-relaxed text-ink/70">{BIO}</p>
+          <div className="mt-6 max-w-md space-y-4 text-sm leading-relaxed text-ink/70">
+            {BIO_PARAGRAPHS.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
 
           <div className="mt-8">
             <p className="mb-3 text-xs font-bold uppercase tracking-widest text-ink/60">
